@@ -34,7 +34,7 @@ body {
     radial-gradient(circle at 86% 18%, rgba(127, 149, 216, 0.14), transparent 28rem),
     linear-gradient(180deg, #10141c 0, var(--paper) 34rem);
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.58;
 }
 
 a {
@@ -253,6 +253,16 @@ h3 {
   margin-top: 1.7rem;
 }
 
+.phone-note {
+  max-width: 31rem;
+  margin: 1.15rem 0 0;
+  padding-left: 0.9rem;
+  color: rgba(238, 243, 247, 0.76);
+  border-left: 3px solid rgba(96, 188, 181, 0.55);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
 .primary-action,
 .secondary-action,
 .prompt-strip button,
@@ -462,6 +472,7 @@ h3 {
 
 .setup-card {
   grid-template-columns: minmax(0, 1fr) minmax(17rem, 24rem);
+  margin-top: clamp(1.25rem, 3vw, 2.75rem);
 }
 
 .setup-card p:not(.kicker),
@@ -562,12 +573,12 @@ h3 {
 }
 
 .section {
-  padding: clamp(3rem, 7vw, 5.5rem) 0 0;
+  padding: clamp(4rem, 9vw, 7rem) 0 0;
 }
 
 .section-heading {
   max-width: 50rem;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.75rem;
 }
 
 .wish-grid,
@@ -575,7 +586,7 @@ h3 {
 .compare-grid,
 .try-steps {
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .wish-grid {
