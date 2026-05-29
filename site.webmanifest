@@ -1,0 +1,22 @@
+{
+  "name": "Tonya, Meet Codex",
+  "short_name": "Tonya Codex",
+  "description": "A funny, visual introduction for Tonya on using Codex as a classroom helper.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090c13",
+  "theme_color": "#090c13",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
