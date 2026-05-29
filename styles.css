@@ -582,6 +582,7 @@ h3 {
 }
 
 .wish-grid,
+.case-grid,
 .mockup-grid,
 .compare-grid,
 .try-steps {
@@ -594,6 +595,10 @@ h3 {
 }
 
 .mockup-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -652,6 +657,105 @@ h3 {
 
 .wish-grid p {
   margin: 0.55rem 0 0;
+}
+
+.case-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  min-height: 20rem;
+  padding: 1.2rem;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(96, 188, 181, 0.12), transparent 44%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--sharp-shadow);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.case-card::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 7rem;
+  height: 7rem;
+  background: radial-gradient(circle, rgba(201, 168, 106, 0.13), transparent 70%);
+  pointer-events: none;
+}
+
+.case-card:nth-child(2),
+.case-card:nth-child(5) {
+  background:
+    linear-gradient(135deg, rgba(201, 168, 106, 0.12), transparent 44%),
+    #151b27;
+}
+
+.case-card:nth-child(3),
+.case-card:nth-child(6) {
+  background:
+    linear-gradient(135deg, rgba(127, 149, 216, 0.13), transparent 44%),
+    #111824;
+}
+
+.case-card:hover,
+.case-card:focus-visible {
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.case-number {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(96, 188, 181, 0.35);
+  border-radius: 8px;
+  background: rgba(96, 188, 181, 0.12);
+  color: var(--teal);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.case-label {
+  margin: 0;
+  color: var(--gold);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-card h3 {
+  max-width: 18rem;
+  font-size: clamp(1.45rem, 2.3vw, 2.1rem);
+  line-height: 0.98;
+}
+
+.case-card p:not(.case-label) {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.case-link {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  margin-top: 0.5rem;
+  color: #fff;
+  font-weight: 900;
+}
+
+.case-link::after {
+  content: " ->";
 }
 
 .mock-card {
@@ -1160,6 +1264,384 @@ h3 {
   border-radius: 8px;
 }
 
+.case-page .site-header .brand,
+.case-page nav a {
+  color: var(--ink);
+}
+
+.case-main {
+  width: min(78rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  margin-bottom: 1.2rem;
+  padding: 0 0.8rem;
+  background: rgba(238, 243, 247, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.case-hero {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2rem, 5vw, 4rem);
+}
+
+.case-hero::before {
+  content: "CASE STUDY";
+  position: absolute;
+  top: 2.7rem;
+  right: 0;
+  z-index: -1;
+  color: rgba(238, 243, 247, 0.035);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+.case-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3.8rem, 8vw, 7rem);
+}
+
+.case-hero .lede {
+  max-width: 48rem;
+}
+
+.case-story {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-panel,
+.final-showcase,
+.input-output {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--sharp-shadow);
+}
+
+.case-panel {
+  padding: 1.1rem;
+}
+
+.case-panel span,
+.input-output span {
+  display: inline-flex;
+  margin-bottom: 0.65rem;
+  color: var(--gold);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-panel h2 {
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  line-height: 0.98;
+}
+
+.case-panel p,
+.input-output p,
+.final-showcase p {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.input-output {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.input-output ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.final-showcase {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.final-showcase .section-heading {
+  margin-bottom: 1rem;
+}
+
+.final-showcase h2 {
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+}
+
+.artifact {
+  overflow: hidden;
+  background: #f5f7f8;
+  color: #111827;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 0 0 1px rgba(7, 10, 16, 0.14),
+    0 22px 55px rgba(0, 0, 0, 0.28);
+}
+
+.artifact-inner {
+  padding: clamp(1.1rem, 3vw, 2rem);
+}
+
+.artifact-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(18, 24, 35, 0.12);
+}
+
+.artifact-head span,
+.artifact-tag {
+  color: #647080;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.artifact h3 {
+  margin-top: 0.2rem;
+  color: #111827;
+  font-size: clamp(1.7rem, 4vw, 3.2rem);
+}
+
+.artifact p,
+.artifact li {
+  color: #334155;
+  font-weight: 800;
+}
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.artifact-box {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(18, 24, 35, 0.11);
+  border-radius: 8px;
+}
+
+.artifact-box strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: "Space Grotesk", sans-serif;
+  color: #111827;
+}
+
+.letter-artifact {
+  background:
+    linear-gradient(90deg, rgba(96, 188, 181, 0.25) 0 0.7rem, transparent 0.7rem),
+    #f5f7f8;
+}
+
+.letter-artifact .callout {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(96, 188, 181, 0.14);
+  border: 1px solid rgba(96, 188, 181, 0.3);
+  border-radius: 8px;
+  color: #245b56;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.signature {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.signature i {
+  width: 10rem;
+  height: 4rem;
+  background:
+    linear-gradient(135deg, transparent 42%, rgba(179, 111, 86, 0.42) 43% 48%, transparent 49%),
+    linear-gradient(165deg, transparent 46%, rgba(179, 111, 86, 0.25) 47% 52%, transparent 53%);
+  border-bottom: 2px solid rgba(179, 111, 86, 0.36);
+}
+
+.worksheet-artifact {
+  background:
+    linear-gradient(180deg, rgba(201, 168, 106, 0.2), transparent 8rem),
+    #f8f2e8;
+}
+
+.worksheet-word-grid,
+.checklist-grid,
+.web-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.worksheet-word-grid span,
+.checklist-grid span {
+  display: grid;
+  place-items: center;
+  min-height: 3.2rem;
+  background: #fff;
+  border: 1px solid rgba(18, 24, 35, 0.12);
+  border-radius: 8px;
+  color: #111827;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.worksheet-lines {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.worksheet-lines span {
+  min-height: 2.6rem;
+  border-bottom: 2px solid rgba(18, 24, 35, 0.22);
+}
+
+.newsletter-artifact {
+  background:
+    radial-gradient(circle at 90% 12%, rgba(201, 168, 106, 0.32), transparent 7rem),
+    #edf7f5;
+}
+
+.newsletter-artifact .artifact-head {
+  border-color: rgba(96, 188, 181, 0.3);
+}
+
+.date-pill {
+  padding: 0.35rem 0.7rem;
+  background: #d8eee9;
+  border-radius: 99px;
+  color: #2f6a63;
+  font-weight: 900;
+}
+
+.subplan-artifact {
+  background:
+    linear-gradient(180deg, #dce6ff 0 8rem, #f0f3fb 8rem);
+}
+
+.schedule-table {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.schedule-table div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.schedule-table b {
+  color: #405aa7;
+}
+
+.schedule-table span {
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid rgba(18, 24, 35, 0.12);
+  border-radius: 8px;
+  color: #111827;
+  font-weight: 900;
+}
+
+.selfcheck-artifact {
+  background:
+    linear-gradient(135deg, rgba(179, 111, 86, 0.14), transparent 44%),
+    #f7f4ef;
+}
+
+.checklist-grid {
+  grid-template-columns: 1fr;
+}
+
+.checklist-grid span {
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  justify-items: start;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.checklist-grid span::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid rgba(96, 188, 181, 0.6);
+  border-radius: 4px;
+}
+
+.webpage-artifact {
+  background: #111827;
+  color: #eef3f7;
+}
+
+.webpage-artifact .browser-bar {
+  height: 2.2rem;
+}
+
+.web-preview-hero {
+  min-height: 17rem;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  background:
+    linear-gradient(135deg, rgba(96, 188, 181, 0.38), transparent 62%),
+    #223142;
+}
+
+.web-preview-hero h3 {
+  max-width: 11rem;
+  color: #fff;
+}
+
+.web-preview-hero p {
+  max-width: 24rem;
+  color: rgba(238, 243, 247, 0.78);
+}
+
+.web-tile-grid {
+  padding: 1rem;
+}
+
+.web-tile-grid span {
+  min-height: 7rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 900;
+}
+
 .compare-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1248,8 +1730,10 @@ h3 {
 @media (max-width: 980px) {
   .hero,
   .wish-grid,
+  .case-grid,
   .mockup-grid,
-  .try-steps {
+  .try-steps,
+  .case-story {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1278,10 +1762,16 @@ h3 {
   .setup-card,
   .friend-note,
   .wish-grid,
+  .case-grid,
   .mockup-grid,
   .compare-grid,
   .try-steps,
-  .prompt-strip {
+  .prompt-strip,
+  .case-story,
+  .input-output,
+  .artifact-grid,
+  .worksheet-word-grid,
+  .web-tile-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1303,6 +1793,17 @@ h3 {
   h1 {
     max-width: 12ch;
     font-size: clamp(3.3rem, 16vw, 4.25rem);
+  }
+
+  .case-hero h1 {
+    max-width: 9ch;
+    font-size: clamp(3rem, 14vw, 4.2rem);
+  }
+
+  .case-hero::before {
+    top: 7rem;
+    right: 0;
+    font-size: 4rem;
   }
 
   h2 {
@@ -1348,5 +1849,10 @@ h3 {
 
   .download-links {
     grid-template-columns: 1fr;
+  }
+
+  .artifact-head,
+  .signature {
+    display: grid;
   }
 }
